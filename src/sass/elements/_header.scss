@@ -1,0 +1,144 @@
+// @import "./variable";
+
+.logo-light {
+	display: none;
+	[data-bs-theme="dark"] & {
+		display: block;
+	}
+}
+
+.logo-dark {
+	display: block;
+	[data-bs-theme="dark"] & {
+		display: none;
+	}
+}
+
+.toggler-menu {
+	background-color: var(--px-bg);
+	color: var(--px-heading);
+	border: 1px solid var(--px-gray) !important;
+	border-radius: var(--px-rounded);
+	padding: 10px 25px;
+	line-height: 1;
+	position: relative;
+	margin-left: 15px;
+	span {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: auto;
+		width: 17px;
+		box-shadow:
+			0 0 0 1px currentColor,
+			0px -7px 0 1px currentColor,
+			0 7px 0 1px currentColor;
+		height: 0;
+	}
+}
+
+// Mob Header
+.mob-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: space-between;
+	padding: 15px 20px;
+	z-index: 111;
+	.fixed-header & {
+		background: var(--px-dark);
+	}
+	@include up-lg {
+		display: none;
+	}
+}
+
+.header-left-fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	width: 285px;
+	background-color: var(--px-dark);
+	z-index: 11;
+	display: flex;
+	flex-direction: column;
+	transition: ease all 0.35s;
+	@include down-lg {
+		left: -400px;
+		.logo {
+			opacity: 0;
+		}
+		&.menu-open {
+			left: 0;
+		}
+	}
+	.logo {
+		padding: 50px 30px 30px;
+	}
+	.main-menu {
+		margin: 0;
+		padding: 40px 0 0;
+		list-style: none;
+		flex: 1;
+		a {
+			padding: 10px 30px;
+			position: relative;
+			display: flex;
+			font-size: 18px;
+			text-transform: uppercase;
+			font-weight: 600;
+			color: var(--px-white) !important;
+			opacity: 0.85;
+			text-decoration: none;
+			cursor: pointer;
+			@include down-lg {
+				padding: 10px 20px;
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+				width: 0;
+				right: 0;
+				height: 3px;
+				background: linear-gradient(270.16deg, var(--px-theme) 33.61%, rgba(175, 38, 118, 0) 92.05%);
+				transition: ease all 0.35s;
+			}
+			&.active {
+				opacity: 1;
+				&:after {
+					width: 65px;
+				}
+			}
+		}
+	}
+	.social-link {
+		padding: 30px;
+		li {
+			margin-right: 10px;
+		}
+		a {
+			width: 40px;
+			height: 40px;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			color: var(--px-dark);
+			background-color: var(--px-white);
+			border-radius: 50%;
+			transition: ease all 0.35s;
+			border: none;
+			&:hover {
+				color: var(--px-white);
+				background-color: var(--px-theme);
+			}
+		}
+	}
+}

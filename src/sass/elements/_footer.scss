@@ -1,0 +1,37 @@
+.footer {
+	position: relative;
+	border-top: 1px solid rgba(var(--px-white-rgb), 0.1);
+	padding: 15px 0;
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.footer-info {
+		display: flex;
+		align-items: center;
+		.footer-avatar {
+			width: 40px;
+			height: 40px;
+			display: flex;
+			border-radius: 50%;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				border-radius: 50%;
+			}
+		}
+		h6 {
+			margin: 0;
+			padding-left: 12px;
+			font-size: 14px;
+			text-transform: capitalize;
+		}
+	}
+
+	.copyright {
+		font-size: 12px;
+		margin: 0;
+	}
+}

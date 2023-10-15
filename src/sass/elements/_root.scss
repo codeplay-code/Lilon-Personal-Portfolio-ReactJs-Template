@@ -1,0 +1,20 @@
+:root {
+	--bs-heading-color: var(--px-heading);
+}
+
+:root, 
+[data-bs-theme=light] {
+	--px-theme:	#{$px-theme};
+	--px-theme-2:	#{$px-theme-2};
+	--px-white:	#{$px-white};
+	--px-white-rgb:	255,255,255;
+
+	--px-text:	#{$px-text};
+	--px-heading:	#{$px-heading};
+	--px-bg:	#{$px-bg};
+	--px-dark:	#{$px-dark};
+}
+
+[data-bs-theme=dark] {
+	
+}
